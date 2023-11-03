@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router";
 function Login() {
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const notify = () => toast("Successfully Registered");
@@ -31,8 +31,8 @@ function Login() {
   const handleRegistration = async () => {
     setLoading(true);
     try {
-      const response = await axios.post("https://quauntum-it-backend.onrender.com/register", {
-        name,
+      const response = await axios.post("https://quauntum-it-backend.onrender.com/login", {
+        email,
         password,
         
       });
@@ -40,6 +40,7 @@ function Login() {
       // console.log(response.data.token);
       const token = response.data.token;
       localStorage.setItem("token", token);
+      navigate("/dashboard");
       notify();
     } catch (error) {
       console.error("Login failed", error);
@@ -102,10 +103,10 @@ function Login() {
         />
         <input
           type="text"
-          placeholder="Name"
+          placeholder="email"
           className="inputbox"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         
         <input
