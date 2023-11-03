@@ -31,7 +31,7 @@ function Login() {
   const handleRegistration = async () => {
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:3000/register", {
+      const response = await axios.post("https://quauntum-it-backend.onrender.com/register", {
         name,
         password,
         

@@ -12,7 +12,7 @@ function ProtectedRoute() {
     async function checkAuthentication() {
       try {
         const token = await localStorage.getItem('token');
-        const response = await axios.post("http://localhost:3000/check_authentication", { token });
+        const response = await axios.post("https://quauntum-it-backend.onrender.com/check_authentication", { token });
         setAuthenticated(response.data.success);
       } catch (error) {
         console.error(error);
