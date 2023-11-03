@@ -22,7 +22,7 @@ function Registration() {
   //   };
   //   fetch();
   // });
-
+  
   const handleRegistration = async () => {
     setLoading(true);
     try {
@@ -36,6 +36,7 @@ function Registration() {
       // console.log(response.data.token);
       const token = response.data.token;
       localStorage.setItem("token", token);
+      navigate("/dashboard");
       notify();
     } catch (error) {
       console.error("Registration failed", error);
