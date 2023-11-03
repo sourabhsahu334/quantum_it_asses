@@ -91,7 +91,8 @@ function Dashboard() {
 ))}
   </tbody>
 </table>
-<nav aria-label="...">
+<div style={{display:"flex",justifyContent:"center",width:"100%"}}>
+<nav style={{}} aria-label="...">
   <ul class="pagination">
     <li class={currentpage==1?"page-item disabled":"page-item"}>
       <span class="page-link">Previous</span>
@@ -110,6 +111,7 @@ function Dashboard() {
     </li>
   </ul>
 </nav>
+</div>
     </div>
   )
 }
