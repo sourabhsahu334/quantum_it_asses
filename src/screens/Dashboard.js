@@ -94,7 +94,7 @@ function Dashboard() {
 <div style={{display:"flex",justifyContent:"center",width:"100%"}}>
 <nav style={{}} aria-label="...">
   <ul class="pagination">
-    <li class={currentpage==1?"page-item disabled":"page-item"}>
+    <li onClick={()=>setCurrentpage(currentpage+1)} class={currentpage==1?"page-item disabled":"page-item"}>
       <span class="page-link">Previous</span>
     </li>
     {pages.map((item,index)=>(
